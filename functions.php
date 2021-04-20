@@ -140,10 +140,14 @@ add_action( 'widgets_init', 'university_site_widgets_init' );
  * Enqueue scripts and styles.
  */
 function university_site_scripts() {
+	wp_enqueue_style( 'university-site-googlefont', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i', array(), _S_VERSION );
+	wp_enqueue_style( 'university-site-fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'university-site-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'university-site-style-main', get_template_directory_uri() . '/assets/css/main.css', array(), _S_VERSION );
 	wp_style_add_data( 'university-site-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'university-site-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'university-site-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

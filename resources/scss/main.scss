@@ -16,6 +16,8 @@
 // layout (everything that takes part in laying out the site)
 
 //@import 'layout/layout';
+@import 'layout/layout';
+@import 'layout/custom';
 
 // component (for smaller components like buttons, carousel, widgets, loader)
 @import "components/wp-classes";
